@@ -1,0 +1,23 @@
+{
+  "name": "deploy-pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":"node index.js",
+    "deploy":"aws s3 sync ./outputs s3://vidgyor.com/test/giri/prebid/gzip --acl public-read --content-encoding gzip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "javascript-obfuscator": "^2.19.0"
+  },
+  "dependencies": {
+    "babel-plugin-remove-comments": "^2.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "node-gzip": "^1.1.2"
+  }
+}
