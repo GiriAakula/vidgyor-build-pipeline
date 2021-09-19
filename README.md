@@ -10,8 +10,10 @@ This tool is primarily built to make my life easier. This will take a bunch of j
 
   `git clone https://github.com/GiriAakula/vidgyor-build-pipeline.git`
 
-- Then install packages
-  `cd vidgyor-build-pipeline`
+- Then install packages <br>
+
+  `cd vidgyor-build-pipeline` <br>
+  
   `npm install`
 
 - Now move the javascript files you want to convert into inputs folder. Then run
