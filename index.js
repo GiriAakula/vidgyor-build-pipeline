@@ -26,7 +26,9 @@ async function main(file) {
         ],
 
     });
-    console.log(result.code)
+
+    fs.writeFileSync(`./babels/${file.split(".")[0]}.min.js`, result.code)
+
     var obfuscationResult = JavaScriptObfuscator.obfuscate(result.code,
         {
             compact: true,
@@ -55,14 +57,14 @@ async function main(file) {
     );
 
     const compressed = await gzip(obfuscationResult.getObfuscatedCode());
-    console.log(file);
     fs.writeFileSync(`./outputs/${file.split(".")[0]}.min.js`, compressed)
-    fs.writeFileSync(`./babels/${file.split(".")[0]}.min.js`, result.code)
 }
 
 
 const testFolder = './inputs/';
 
 fs.readdirSync(testFolder).forEach(file => {
-  main(file);
+    if(file.includes(".js")){
+          main(file);
+    }
 });
